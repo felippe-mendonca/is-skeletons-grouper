@@ -119,6 +119,10 @@ std::unordered_map<int64_t, std::unordered_map<int64_t, arma::mat>> compute_fund
 }
 
 arma::mat epipolar_line(arma::mat const& points, arma::mat const& F, arma::mat const& sc0, arma::mat const& sc1) {
+  /*
+    'sc0' -> destination camera
+    'sc1' -> reference camera
+  */
   arma::mat l = sc0.i() * F * sc1.i() * points;
   arma::rowvec k = arma::sqrt(arma::square(l.row(0)) + arma::square(l.row(1)));
   l.each_row() /= k;

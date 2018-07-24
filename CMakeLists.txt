@@ -56,23 +56,23 @@ target_link_libraries(
 set_property(TARGET skeletons PROPERTY CXX_STANDARD 14)
 
 # # ######
-# # #### Build service binary
+# # #### Build group_dataset binary
 # # ######
 
-add_executable(service.bin service.cpp ${options_hdr} ${options_src})
+add_executable(group_dataset.bin group_dataset.cpp stream_pb.hpp stream_pb.cpp ${options_hdr} ${options_src})
 
 target_include_directories(
-  service.bin 
+  group_dataset.bin 
  PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}> # for generated files in build mode
 )
 
 target_link_libraries(
-  service.bin
+  group_dataset.bin
  PRIVATE
   is-wire::is-wire
   skeletons
   vision
 )
 
-set_property(TARGET service.bin PROPERTY CXX_STANDARD 14)
+set_property(TARGET group_dataset.bin PROPERTY CXX_STANDARD 14)

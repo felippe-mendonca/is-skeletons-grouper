@@ -1,9 +1,8 @@
 {
-  "broker_uri": "amqp://10.10.2.15:30000",
-  "zipkin_host": "10.10.2.15",
-  "zipkin_port": 30200,
-  "cameras_ids": [0, 1, 2, 3, 4],
-  "referencial": 1000,
-  "min_error": 50.0,
-  "period_ms": 100
+  "basedir": "/home/felippe/skeletons-data",
+  "model": "COCO",
+  "dataset": "160422_haggling1",
+  "source_type": "DATASET",
+  "referencial": 9999,
+  "min_error": 50.0
 }

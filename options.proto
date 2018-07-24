@@ -2,12 +2,21 @@ syntax = "proto3";
 
 package is;
 
-message SkeletonsGrouperOptions {
-  string broker_uri = 1;
-  string zipkin_host = 2;
-  uint32 zipkin_port = 3;
-  repeated int64 cameras_ids = 4;
+enum SourceType {
+  DATASET = 0;
+  DETECTOR = 1;
+}
+
+enum SkeletonModel {
+  COCO = 0;
+  MPII = 1;
+}
+
+message DatasetSkeletonsGrouperOptions {
+  string basedir = 1;
+  SkeletonModel model = 2;
+  string dataset = 3;
+  SourceType source_type = 4;
   int64 referencial = 5;
   double min_error = 6;
-  uint32 period_ms = 7;
 }
